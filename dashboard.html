@@ -125,7 +125,7 @@ Admin
 
 <div class="card shadow">
 
-<div class="card-body text-center">
+<div class="card-body texti-center">
 
 <i class="bi bi-graph-up-arrow display-4 text-warning"></i>
 
@@ -257,29 +257,37 @@ Open
 <script type="module">
 
 import { auth, db } from "./firebase.js";
-import {
 
+import {
 onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+
+import {
+collection,
+getCountFromServer
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+// Check Login
+
+onAuthStateChanged(auth, async (user)=>{
+
+if(user){
+
+document.getElementById("userName").innerText =
+user.displayName || user.email;
+
+
+// Real Users Count
+
 const usersRef = collection(db, "users");
 
 const snapshot = await getCountFromServer(usersRef);
 
 document.getElementById("userCount").innerText =
 snapshot.data().count;
-signOut
 
-} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
-import { collection, getCountFromServer } 
-from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-
-// Check Login
-
-onAuthStateChanged(auth, (user)=>{
-
-if(user){
-
-document.getElementById("userName").innerText =
-user.displayName || user.email;
 
 }else{
 
@@ -295,9 +303,7 @@ window.location.href="login.html";
 document.getElementById("logoutBtn")
 .addEventListener("click",()=>{
 
-
 signOut(auth)
-
 .then(()=>{
 
 alert("Logout Successful");
@@ -306,9 +312,7 @@ window.location.href="login.html";
 
 });
 
-
 });
-
 
 </script>
 
