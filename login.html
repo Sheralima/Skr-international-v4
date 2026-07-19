@@ -163,3 +163,63 @@ Register Now
 </div>
 
 </section>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+
+<div class="container">
+
+<p class="mb-1">
+© 2026 SKR INTERNATIONAL. All Rights Reserved.
+</p>
+
+<p class="mb-0">
+The Unity of Business
+</p>
+
+</div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Login Script -->
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", async (e) => {
+
+e.preventDefault();
+
+const email = document.getElementById("email").value;
+
+const password = document.getElementById("password").value;
+
+try {
+
+await signInWithEmailAndPassword(auth, email, password);
+
+alert("Login Successful!");
+
+window.location.href = "index.html";
+
+} catch (error) {
+
+alert(error.message);
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
