@@ -237,7 +237,13 @@ const userCredential = await createUserWithEmailAndPassword(
     email,
     password
 );
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
+await setDoc(doc(db, "users", userCredential.user.uid), {
+    name: fullname,
+    email: email,
+    createdAt: new Date()
+});
 await updateProfile(userCredential.user, {
     displayName: fullname
 });
