@@ -104,3 +104,109 @@ counter.innerText=target;
 update();
 
 });
+/* ==========================================
+   SKR INTERNATIONAL V4
+   script.js - Part 2
+========================================== */
+
+// ===============================
+// Scroll To Top Button
+// ===============================
+
+const scrollBtn = document.createElement("button");
+
+scrollBtn.innerHTML = "↑";
+
+scrollBtn.id = "scrollTopBtn";
+
+document.body.appendChild(scrollBtn);
+
+scrollBtn.style.position = "fixed";
+scrollBtn.style.bottom = "20px";
+scrollBtn.style.right = "20px";
+scrollBtn.style.width = "45px";
+scrollBtn.style.height = "45px";
+scrollBtn.style.border = "none";
+scrollBtn.style.borderRadius = "50%";
+scrollBtn.style.background = "#0d6efd";
+scrollBtn.style.color = "#fff";
+scrollBtn.style.cursor = "pointer";
+scrollBtn.style.display = "none";
+scrollBtn.style.fontSize = "20px";
+scrollBtn.style.zIndex = "9999";
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+// ===============================
+// Smooth Scroll
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+// ===============================
+// Navbar Shadow
+// ===============================
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (navbar) {
+
+        if (window.scrollY > 50) {
+
+            navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,.25)";
+
+        } else {
+
+            navbar.style.boxShadow = "none";
+
+        }
+
+    }
+
+});
+
+
+// ===============================
+// Console Message
+// ===============================
+
+console.log("SKR INTERNATIONAL V4 Loaded Successfully");
