@@ -262,7 +262,7 @@ Open
 <script type="module">
 
 import { auth } from "./firebase.js";
-
+import { auth, db } from "./firebase.js";
 import {
 
 onAuthStateChanged,
@@ -271,7 +271,7 @@ const usersRef = collection(db, "users");
 const snapshot = await getCountFromServer(usersRef);
 
 document.getElementById("userCount").innerText =
-snapshot.data().count;import { auth, db } from "./firebase.js";
+snapshot.data().count;
 signOut
 
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
