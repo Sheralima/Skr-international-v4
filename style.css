@@ -233,3 +233,149 @@ footer a:hover{
 .shadow{
     box-shadow:0 10px 25px rgba(0,0,0,.12)!important;
 }
+/* ==========================================
+   SKR INTERNATIONAL V4
+   style.css - Part 3
+========================================== */
+
+/* Smooth Animations */
+
+.fade-up{
+    animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    transition:0.3s ease;
+}
+
+img:hover{
+    transform:scale(1.02);
+}
+
+/* Mobile Responsive */
+
+@media (max-width:992px){
+
+.navbar-brand{
+    font-size:1rem;
+}
+
+.hero{
+    min-height:350px;
+}
+
+.hero h1{
+    font-size:2.2rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+.slider,
+.slide{
+    height:50vh;
+}
+
+.card{
+    margin-bottom:20px;
+}
+
+}
+
+@media (max-width:768px){
+
+header h1{
+    font-size:1.7rem;
+}
+
+header p{
+    font-size:0.9rem;
+}
+
+.hero{
+    min-height:300px;
+    padding:40px 15px;
+}
+
+.hero h1{
+    font-size:1.8rem;
+}
+
+.hero p{
+    font-size:0.95rem;
+}
+
+.hero .btn{
+    display:block;
+    width:100%;
+    margin:10px 0;
+}
+
+.slider,
+.slide{
+    height:35vh;
+}
+
+.navbar-nav{
+    text-align:center;
+}
+
+.card{
+    margin-bottom:20px;
+}
+
+section{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+}
+
+@media (max-width:576px){
+
+header h1{
+    font-size:1.5rem;
+}
+
+.hero h1{
+    font-size:1.5rem;
+}
+
+.hero p{
+    font-size:0.9rem;
+}
+
+.slider,
+.slide{
+    height:28vh;
+}
+
+.btn{
+    width:100%;
+}
+
+.card-body{
+    padding:20px;
+}
+
+footer{
+    font-size:14px;
+}
+
+}
+
+/* End of style.css */
