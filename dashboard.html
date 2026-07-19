@@ -169,3 +169,150 @@ Website updated successfully.
 </li>
 
 </ul>
+<!-- Quick Actions -->
+
+<div class="row mt-5 g-4">
+
+<div class="col-md-4">
+
+<div class="card shadow text-center p-3">
+
+<h5>
+<i class="bi bi-person-plus-fill text-primary"></i>
+Users Management
+</h5>
+
+<p>
+Manage registered users.
+</p>
+
+<button class="btn btn-primary">
+Open
+</button>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="card shadow text-center p-3">
+
+<h5>
+<i class="bi bi-gear-fill text-success"></i>
+Settings
+</h5>
+
+<p>
+Manage website settings.
+</p>
+
+<button class="btn btn-success">
+Open
+</button>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="card shadow text-center p-3">
+
+<h5>
+<i class="bi bi-bar-chart-fill text-warning"></i>
+Reports
+</h5>
+
+<p>
+View business reports.
+</p>
+
+<button class="btn btn-warning">
+Open
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer class="bg-dark text-white text-center py-3">
+
+<p class="mb-0">
+© 2026 SKR INTERNATIONAL - Admin Dashboard
+</p>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Firebase Authentication -->
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import {
+
+onAuthStateChanged,
+
+signOut
+
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+
+// Check Login
+
+onAuthStateChanged(auth, (user)=>{
+
+if(user){
+
+document.getElementById("userName").innerText =
+user.displayName || user.email;
+
+}else{
+
+window.location.href="login.html";
+
+}
+
+});
+
+
+// Logout
+
+document.getElementById("logoutBtn")
+.addEventListener("click",()=>{
+
+
+signOut(auth)
+
+.then(()=>{
+
+alert("Logout Successful");
+
+window.location.href="login.html";
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
