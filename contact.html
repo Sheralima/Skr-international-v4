@@ -117,31 +117,66 @@ Karachi, Sindh, Pakistan
 
 <h2 class="fw-bold mb-4">Send Us a Message</h2>
 
-<form>
+<form id="contactForm">
 
 <div class="row">
 
 <div class="col-md-6 mb-3">
-<input type="text" class="form-control" placeholder="Your Name" required>
+
+<input 
+id="name"
+type="text" 
+class="form-control" 
+placeholder="Your Name" 
+required>
+
 </div>
+
 
 <div class="col-md-6 mb-3">
-<input type="email" class="form-control" placeholder="Your Email" required>
+
+<input 
+id="email"
+type="email" 
+class="form-control" 
+placeholder="Your Email" 
+required>
+
 </div>
 
 </div>
+
 
 <div class="mb-3">
-<input type="text" class="form-control" placeholder="Subject" required>
+
+<input 
+id="subject"
+type="text" 
+class="form-control" 
+placeholder="Subject" 
+required>
+
 </div>
 
+
 <div class="mb-3">
-<textarea class="form-control" rows="6" placeholder="Write Your Message..." required></textarea>
+
+<textarea 
+id="message"
+class="form-control" 
+rows="6" 
+placeholder="Write Your Message..."
+required></textarea>
+
 </div>
+
 
 <button type="submit" class="btn btn-primary btn-lg">
+
 <i class="bi bi-send-fill"></i> Send Message
+
 </button>
+
 
 </form>
 
@@ -212,5 +247,45 @@ The Unity of Business
 
 <script src="script.js"></script>
 
-</body>
+</b<script type="module">
+
+import { db } from "./firebase.js";
+
+import {
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+
+const form = document.getElementById("contactForm");
+
+
+form.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+
+await addDoc(collection(db,"messages"),{
+
+name: document.getElementById("name").value,
+
+email: document.getElementById("email").value,
+
+subject: document.getElementById("subject").value,
+
+message: document.getElementById("message").value,
+
+date: new Date()
+
+});
+
+
+alert("Message Sent Successfully!");
+
+form.reset();
+
+
+});
+
+  </script>ody>
 </html>
