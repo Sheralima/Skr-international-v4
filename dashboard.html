@@ -255,7 +255,10 @@ Open
 <script type="module">
 
 import { auth, db } from "./firebase.js";
-
+import {
+collection,
+getCountFromServer
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 import {
 onAuthStateChanged,
 signOut
@@ -275,7 +278,14 @@ if(user){
 
 document.getElementById("userName").innerText =
 user.displayName || user.email;
+// Real Messages Count
 
+const messagesRef = collection(db, "messages");
+
+const messageSnapshot = await getCountFromServer(messagesRef);
+
+document.getElementById("messageCount").innerText =
+messageSnapshot.data().count;
 
 // Real Users Count
 
