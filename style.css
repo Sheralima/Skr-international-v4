@@ -377,4 +377,24 @@ footer{
 }
 
 }
+.icon-nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    padding:15px;
+    background:#0d6efd;
+}
+
+.icon-nav a{
+    color:white;
+    font-size:22px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.icon-nav a:hover{
+    color:#ffd700;
+    transform:scale(1.2);
+}
 /* End of style.css */
