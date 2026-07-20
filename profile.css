@@ -1,1 +1,51 @@
+.team-section{
+    padding:60px 20px;
+    text-align:center;
+    background:#f8f9fa;
+}
 
+.profile-card{
+    width:320px;
+    margin:auto;
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profile-card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #0d6efd;
+}
+
+.profile-card h3{
+    margin-top:15px;
+    color:#0d6efd;
+}
+
+.profile-card p{
+    margin:10px 0;
+    color:#555;
+}
+
+.about{
+    font-size:14px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#0d6efd;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.btn:hover{
+    background:#084298;
+}
