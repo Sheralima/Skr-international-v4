@@ -377,5 +377,11 @@ footer{
 }
 
 }
-
+.contact-img{
+    width:100%;
+    max-width:500px;
+    display:block;
+    margin:20px auto;
+    border-radius:10px;
+}
 /* End of style.css */
