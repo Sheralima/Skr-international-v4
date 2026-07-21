@@ -307,7 +307,7 @@ header p{
 }
 
 .hero{
-    min-height:300px;
+    min-height:200px;
     padding:40px 15px;
 }
 
@@ -379,8 +379,8 @@ footer{
 }
 .icon-nav{
     display:flex;
-    justify-content:center;
-    align-items:center;
+    justify-content:left;
+    align-items:left;
     gap:20px;
     padding:15px;
     background:#0d6efd;
