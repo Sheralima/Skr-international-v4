@@ -1,16 +1,90 @@
-<section class="team-section">
-    <h2>Our Team</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile - SKR INTERNATIONAL</title>
 
-    <div class="profile-card">
-        <img src="images/team1.jpg" alt="Team Member">
+<link rel="stylesheet" href="style.css">
 
-        <h3>John Smith</h3>
-        <p>Chief Executive Officer (CEO)</p>
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
 
-        <p class="about">
-            Professional business leader with years of experience in management and international business.
-        </p>
+.profile-card{
+    background:#fff;
+    width:350px;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
 
-        <a href="contact.html" class="btn">Contact</a>
-    </div>
-</section>
+.profile-card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #0d6efd;
+}
+
+.profile-card h2{
+    margin-top:15px;
+}
+
+.profile-card p{
+    color:#666;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#0d6efd;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="profile-card">
+
+<img src="images/profile.png" alt="Profile">
+
+<h2 id="username">User Name</h2>
+
+<p id="email">user@email.com</p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+document.getElementById("username").innerHTML =
+localStorage.getItem("username") || "Guest User";
+
+document.getElementById("email").innerHTML =
+localStorage.getItem("email") || "No Email";
+
+function logout(){
+
+localStorage.clear();
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>
