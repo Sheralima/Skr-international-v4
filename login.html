@@ -189,32 +189,45 @@ The Unity of Business
 import { auth } from "./firebase.js";
 
 import {
-signInWithEmailAndPassword
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 const form = document.getElementById("loginForm");
 
 form.addEventListener("submit", async (e) => {
 
-e.preventDefault();
+  e.preventDefault();
 
-const email = document.getElementById("email").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-const password = document.getElementById("password").value;
+  try {
 
-try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
 
-await signInWithEmailAndPassword(auth, email, password);
+    localStorage.setItem(
+      "username",
+      userCredential.user.displayName || "User"
+    );
 
-alert("Login Successful!");
+    localStorage.setItem(
+      "email",
+      userCredential.user.email
+    );
 
-window.location.href = "dashboard.html";
+    alert("Login Successful!");
 
-} catch (error) {
+    window.location.href = "profile.html";
 
-alert(error.message);
+  } catch (error) {
 
-}
+    alert(error.message);
+
+  }
 
 });
 
