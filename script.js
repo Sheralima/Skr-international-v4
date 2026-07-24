@@ -178,32 +178,107 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
+/* ===================================
+   SKR INTERNATIONAL
+   Navbar.css
+=================================== */
 
+.navbar{
+    width:100%;
+    background:#0d6efd;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
 
-// ===============================
-// Navbar Shadow
-// ===============================
+.navbar .container{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
 
-const navbar = document.querySelector(".navbar");
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
 
-window.addEventListener("scroll", () => {
+.logo img{
+    width:45px;
+    height:45px;
+    margin-right:10px;
+}
 
-    if (navbar) {
+.logo span{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
 
-        if (window.scrollY > 50) {
+.nav-icons{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
 
-            navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,.25)";
+.nav-icons a{
+    text-decoration:none;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-size:14px;
+    transition:.3s;
+}
 
-        } else {
+.nav-icons a:hover{
+    color:#ffd700;
+    transform:translateY(-3px);
+}
 
-            navbar.style.boxShadow = "none";
+.nav-icons a{
+    font-size:22px;
+}
 
-        }
+.nav-icons a span{
+    font-size:12px;
+    margin-top:4px;
+}
 
-    }
+@media(max-width:768px){
 
-});
+.navbar .container{
+    flex-direction:column;
+}
 
+.logo{
+    margin-bottom:15px;
+}
+
+.nav-icons{
+    width:100%;
+    justify-content:space-around;
+    gap:10px;
+}
+
+.logo span{
+    font-size:20px;
+}
+
+.nav-icons a{
+    font-size:20px;
+}
+
+.nav-icons a span{
+    font-size:11px;
+}
+
+}
 
 // ===============================
 // Console Message
